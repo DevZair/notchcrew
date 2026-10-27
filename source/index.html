@@ -1,0 +1,19 @@
+<!doctype html><html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>NotchCrew</title><link rel="stylesheet" href="office.css">
+<script src="scene-core.js" defer></script><script src="scene.js" defer></script><script src="office.js" defer></script>
+</head><body>
+<header class="topbar">
+<nav class="tabs" aria-label="Разделы офиса"><button data-tab="office" aria-current="page">Офис</button><button data-tab="team">Агенты <b id="team-count">0</b></button><button data-tab="requests">Ожидают <b id="request-count">0</b></button></nav>
+<div class="live" id="connection"><i></i><span>Подключаемся</span></div></header>
+<main>
+<section id="office" class="page active" aria-label="Живой офис">
+<div class="scene-toolbar"><span><i class="dot working"></i><strong id="working">0</strong> за работой <i class="dot waiting"></i><strong id="waiting">0</strong> ждут вас <i class="dot resting"></i><strong id="resting">0</strong> на перерыве <span id="unknown"></span></span><div><label><input type="checkbox" id="chatter" checked> Реплики</label><label><input type="checkbox" id="motion" checked> Движение</label></div></div>
+<section id="general-active" class="general-active" hidden aria-label="Главные агенты активных чатов"></section>
+<div class="stage"><canvas id="scene" aria-label="Пиксельная карта офиса. Все агенты доступны кнопками поверх карты."></canvas><div id="hit-layer"></div><div class="scene-stamp">NOTCHCREW <span>EST. 2026</span></div></div>
+<section class="profile" id="profile" aria-label="Выбранный специалист" hidden></section></section>
+<section id="team" class="page scroll-page" aria-label="Команда"><div class="section-heading"><div><p class="eyebrow">КОМАНДА</p><h2>Агенты</h2></div><label class="search"><input type="search" id="search" placeholder="Имя или специализация…" aria-label="Найти агента"></label></div><div id="roster" class="roster"></div><section class="general"><h3>Общие сессии</h3><p id="general-text">Проверяем локальные журналы…</p><small>Главные чаты и подагенты вне каталога учитываются отдельно от каталога специалистов.</small></section><p id="sources" class="muted"></p></section>
+<section id="requests" class="page scroll-page" aria-label="Ожидающие запросы"><div class="section-heading"><div><p class="eyebrow">ЗАПРОСЫ АГЕНТОВ</p><h2>Ожидают ответа</h2></div><span class="muted">Только настоящие запросы</span></div><div class="notification-setting"><div><strong>Уведомления на Mac</strong><p id="notification-status">Подключите уведомления, чтобы увидеть запрос на экране блокировки.</p></div><button class="action secondary" id="notification-enable">Включить</button></div><div id="requests-list"></div></section>
+</main><footer><span>Реплики — шутки. Статусы — из локальных событий.</span><span id="sync">Подключаем команду…</span></footer><div id="notice" role="status" hidden></div>
+</body></html>

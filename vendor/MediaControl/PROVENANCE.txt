@@ -1,0 +1,11 @@
+media-control 0.7.7
+Source: https://github.com/ungive/media-control/tree/v0.7.7
+Distribution: Homebrew core, arm64_tahoe bottle verified by Homebrew
+Upstream release: v0.7.7; packaged from the Homebrew arm64_tahoe bottle.
+The bundled native adapter is arm64 and was tested on macOS 26.
+Launcher source is BSD-3-Clause (copyright header verified at v0.7.7).
+App invocation: stream --no-diff (latest metadata and bounded artwork, held in RAM).
+User-click playback allowlist: previous-track, toggle-play-pause, next-track.
+Each action has a 3-second timeout; only one action process and one latest pending action are retained.
+No automatic playback, seek, test, history, network or upload commands are invoked.
+Licenses: BSD-3-Clause; included alongside this file.
